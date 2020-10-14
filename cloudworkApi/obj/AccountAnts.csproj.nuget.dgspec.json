@@ -1,0 +1,83 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/gigi/Documents/GitHub/angularTemplate-Api/AccountAnts/AccountAnts.csproj": {}
+  },
+  "projects": {
+    "/Users/gigi/Documents/GitHub/angularTemplate-Api/AccountAnts/AccountAnts.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/gigi/Documents/GitHub/angularTemplate-Api/AccountAnts/AccountAnts.csproj",
+        "projectName": "AccountAnts",
+        "projectPath": "/Users/gigi/Documents/GitHub/angularTemplate-Api/AccountAnts/AccountAnts.csproj",
+        "packagesPath": "/Users/gigi/.nuget/packages/",
+        "outputPath": "/Users/gigi/Documents/GitHub/angularTemplate-Api/AccountAnts/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/gigi/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Cors": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.1, )"
+            },
+            "System.Runtime.Caching": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.402/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
