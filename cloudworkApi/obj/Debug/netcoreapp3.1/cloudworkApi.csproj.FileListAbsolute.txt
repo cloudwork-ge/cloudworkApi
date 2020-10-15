@@ -102,3 +102,4 @@
 /Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/obj/Debug/netcoreapp3.1/cloudworkApi.dll
 /Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/obj/Debug/netcoreapp3.1/cloudworkApi.pdb
 /Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/obj/Debug/netcoreapp3.1/cloudworkApi.genruntimeconfig.cache
+/Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/obj/Debug/netcoreapp3.1/cloudworkApi.csprojAssemblyReference.cache
