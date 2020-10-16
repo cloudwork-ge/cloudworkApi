@@ -14,10 +14,14 @@ namespace cloudworkApi.Models
         public string email { get; set; }
         public string phone { get; set; }
         public string tin { get; set; }
-        public bool is_admin { get; set; }
+        public string userType { get; set; }
         public string token { get; set; }
         public DateTime authDate { get; set; } = new DateTime();
 
+    }
+    public enum UserTypes {
+        Freelancer,
+        Business
     }
     public static class CurrentInstance
     {

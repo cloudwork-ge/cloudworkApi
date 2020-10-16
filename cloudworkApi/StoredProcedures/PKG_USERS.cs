@@ -35,25 +35,22 @@ namespace cloudworkApi.StoredProcedures
 
             connection.Open();
             //cmd.ExecuteNonQuery();
-            authUser = new AuthUser();
-            SqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                authUser.ID = (int)reader["ID"];
-                authUser.email = reader["email"].ToString();
-                authUser.phone = reader["phone"].ToString();
-                authUser.fullName = reader["fullName"].ToString();
-                authUser.is_admin = Convert.ToBoolean(reader["is_admin"]);
-            }
-            reader.Close();
-            connection.Close();
+            var user = new AuthUser();
+            this.ExecuteReader(cmd, delegate(SqlDataReader reader) {
+                user.ID = (int)reader["ID"];
+                user.email = reader["email"].ToString();
+                user.phone = reader["phone"].ToString();
+                user.fullName = reader["fullName"].ToString();
+                user.userType = reader["userType"].ToString();
+            });
+            authUser = user;
             return Convert.ToBoolean(cmd.Parameters["@returnValue"].Value);
         }
         public Boolean Register(string email, string password, string fullName, string phone, string tin, decimal samformaType, decimal userType)
         {
-            var connString = _connectionString;
-            SqlConnection connection = new SqlConnection(connString);
-            SqlCommand cmd = new SqlCommand("Register", connection);
+            //var connString = _connectionString;
+            //SqlConnection connection = new SqlConnection(connString);
+            SqlCommand cmd = new SqlCommand("Register");
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
             cmd.Parameters.Add("@email", SqlDbType.VarChar, 100).Value = email;
@@ -64,10 +61,11 @@ namespace cloudworkApi.StoredProcedures
             cmd.Parameters.Add("@samforma", SqlDbType.Int).Value = samformaType;
             cmd.Parameters.Add("@userType", SqlDbType.Int).Value = userType;
             cmd.Parameters.Add("@returnValue", SqlDbType.Int).Direction = ParameterDirection.ReturnValue;
-            
-            connection.Open();
-            cmd.ExecuteNonQuery();
-            connection.Close();
+
+            //connection.Open();
+
+            this.ExecuteNonQuery(cmd);
+            //connection.Close();
             return Convert.ToBoolean(cmd.Parameters["@returnValue"].Value);
         }
 

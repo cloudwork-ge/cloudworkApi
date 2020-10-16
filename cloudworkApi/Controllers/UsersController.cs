@@ -97,7 +97,7 @@ namespace cloudworkApi.Controllers
             var dict = new Dictionary<string, object>();
             dict.Add("fullName", authUser.fullName);
             dict.Add("email", authUser.email);
-            dict.Add("isAdmin", authUser.is_admin);
+            dict.Add("userType", authUser.userType);
 
             object output = new
             {

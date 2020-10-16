@@ -56,8 +56,8 @@ namespace cloudworkApi.Models
                 return _phone;
             }
             set {
-                if (value.Trim().Length <= 0) throw new UserExceptions("შეიყვანეთ მობილურის ნომერი.");
-                if (value.Trim().Length < 9 || value.Trim().Length > 15) throw new UserExceptions("მობილურის ნომერი უნდა შედგებოდეს მინიმუმ 9 ციფრისგან");
+                //if (value.Trim().Length <= 0) throw new UserExceptions("შეიყვანეთ მობილურის ნომერი.");
+                //if (value.Trim().Length < 9 || value.Trim().Length > 15) throw new UserExceptions("მობილურის ნომერი უნდა შედგებოდეს მინიმუმ 9 ციფრისგან");
                 _phone = value;
             }
         }
