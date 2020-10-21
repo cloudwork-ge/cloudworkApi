@@ -22,7 +22,7 @@
   },
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "AccountAnts/1.0.0": {
+      "cloudworkApi/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Cors": "2.2.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.4",
@@ -313,10 +313,10 @@
           "WindowsBase": "4.0.0.0"
         },
         "runtime": {
-          "AccountAnts.dll": {}
+          "cloudworkApi.dll": {}
         },
         "compile": {
-          "AccountAnts.dll": {}
+          "cloudworkApi.dll": {}
         }
       },
       "Microsoft.AspNetCore.Cors/2.2.0": {
@@ -3437,7 +3437,7 @@
     }
   },
   "libraries": {
-    "AccountAnts/1.0.0": {
+    "cloudworkApi/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
