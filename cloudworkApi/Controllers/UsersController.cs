@@ -77,7 +77,7 @@ namespace cloudworkApi.Controllers
                 email.SendEmail(user.email,"რეგისტრაცია {{საიტი}} ზე","თქვენ წარმატებით დარეგისტრირდით {{საიტი}} პორტალზე.");
                 LoginCredentials login = new LoginCredentials();
                 login.email = user.email;
-                login.password = login.password;
+                login.password = user.password;
                 return this.Authenticate(login);
             }
             else

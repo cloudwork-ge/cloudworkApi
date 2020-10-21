@@ -72,7 +72,7 @@ namespace cloudworkApi.Models
             } 
         }
         public string tin { get; set; }
-        public decimal samformaType { get; set; }
+        public string samformaType { get; set; }
         public decimal userType { get; set; }
     }
     public class Profile

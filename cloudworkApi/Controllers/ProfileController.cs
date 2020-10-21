@@ -25,20 +25,19 @@ using System.Reflection.Metadata;
 using System.Web;
 using cloudworkApi.Common;
 using cloudworkApi.Services;
+using cloudworkApi.Models.dsModels;
 
 namespace cloudworkApi.Controllers
 {
     public class ProfileController : MainController
     {
         [Authorization]
-        public JsonDocument GetUserProfile()
+        public JsonDocument GetUserProfile([FromBody] Grid grid)
         {
-            var dict = new Dictionary<string, string>();
-            dict.Add("fullName", authUser.fullName);
-            dict.Add("email", authUser.email);
-            dict.Add("phone", authUser.phone);
+            grid.Criteria = string.Format("WHERE Id = {0}", authUser.ID);
+            grid.dsViewName = "V_USERS";
+            return Success(grid.GetData<dsUserProfile>());
 
-            return Success(dict);
         }
         [Authorization]
         public JsonDocument ChangeProfile(Profile user)
