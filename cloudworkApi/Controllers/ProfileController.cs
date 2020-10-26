@@ -40,20 +40,20 @@ namespace cloudworkApi.Controllers
 
         }
         [Authorization]
-        public JsonDocument ChangeProfile(Profile user)
+        public JsonDocument ChangeProfile(dsUserProfile user)
         {
-            //var changed = new PKG_PROFILE().ChangeProfile(authUser.ID, user.fullName, user.phone, user.tin);
-            //if (changed)
-            //{
-            //    AuthUser newAuthUser = authUser;
-            //    newAuthUser.fullName = user.fullName;
-            //    newAuthUser.phone = user.phone;
-            //    newAuthUser.tin = user.tin;
-            //    new TokenManager().setToken(authUser.token, newAuthUser);
-            //    return Success();
-            //}
-            //else
-            //    return throwError("პროფილის დელატები ვერ შეივალა");
+            var changed = new PKG_PROFILE().ChangeProfile(authUser.ID, user.fullname, user.phone,user.workType, user.description, user.bankNumber, user.tin);
+            if (changed)
+            {
+                AuthUser newAuthUser = authUser;
+                newAuthUser.fullName = user.fullname;
+                newAuthUser.phone = user.phone;
+                newAuthUser.tin = user.tin;
+                new TokenManager().setToken(authUser.token, newAuthUser);
+                return Success();
+            }
+            else
+                return throwError("პროფილის დელატები ვერ შეივალა");
             return Success();
 
         }

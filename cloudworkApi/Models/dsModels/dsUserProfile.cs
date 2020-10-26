@@ -12,5 +12,8 @@ namespace cloudworkApi.Models.dsModels
         public string samforma { get; set; }
         public decimal userType { get; set; }
         public string userTypeTxt { get; set; }
+        public string description { get; set; }
+        public string workType { get; set; }
+        public string bankNumber { get; set; }
     }
 }

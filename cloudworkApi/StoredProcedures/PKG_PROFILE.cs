@@ -15,7 +15,7 @@ namespace cloudworkApi.StoredProcedures
 {
     public class PKG_PROFILE : DataManager
     {
-        public bool ChangeProfile(int userID, string fullName, string phone, string tin = "")
+        public bool ChangeProfile(int userID, string fullName, string phone, string worktype, string description, string bankNumber, string tin = "")
         {
             var connString = _connectionString;
             SqlConnection connection = new SqlConnection(connString);
@@ -29,6 +29,9 @@ namespace cloudworkApi.StoredProcedures
             else
                 cmd.Parameters.Add("@tin", SqlDbType.NVarChar, 50).Value = tin;
 
+            cmd.Parameters.Add("@workType", SqlDbType.NVarChar).Value = worktype;
+            cmd.Parameters.Add("@description", SqlDbType.NVarChar).Value = description;
+            cmd.Parameters.Add("@bankNumber", SqlDbType.NVarChar).Value = bankNumber;
             cmd.Parameters.Add("@userID", SqlDbType.Int).Value = userID;
             cmd.Parameters.Add("@returnValue", SqlDbType.Int).Direction = ParameterDirection.Output;
 

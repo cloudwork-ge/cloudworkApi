@@ -1,21 +1,21 @@
 ﻿<Properties StartupConfiguration="{EC2D071E-2CE7-4D81-A033-B0EE91762D4F}|Custom">
-  <MonoDevelop.Ide.Workbench ActiveDocument="cloudworkApi/DataManagers/GridManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="cloudworkApi/Controllers/ProfileController.cs">
     <Files>
       <File FileName="cloudworkApi/Controllers/MainController.cs" Line="22" Column="34" />
-      <File FileName="cloudworkApi/Controllers/ProfileController.cs" Line="35" Column="58" />
-      <File FileName="cloudworkApi/Controllers/UsersController.cs" Line="128" Column="10" />
-      <File FileName="cloudworkApi/Models/UserCredentials.cs" Line="45" Column="1" />
-      <File FileName="cloudworkApi/StoredProcedures/PKG_USERS.cs" Line="62" Column="43" />
-      <File FileName="cloudworkApi/DataManagers/DataManager.cs" Line="42" Column="1" />
+      <File FileName="cloudworkApi/Controllers/ProfileController.cs" Line="37" Column="1" />
+      <File FileName="cloudworkApi/Controllers/UsersController.cs" />
+      <File FileName="cloudworkApi/Models/UserCredentials.cs" />
+      <File FileName="cloudworkApi/StoredProcedures/PKG_USERS.cs" />
+      <File FileName="cloudworkApi/DataManagers/DataManager.cs" />
       <File FileName="cloudworkApi/Program.cs" />
       <File FileName="cloudworkApi/Startup.cs" />
       <File FileName="cloudworkApi/StoredProcedures/PKG_ERROR_LOGS.cs" />
       <File FileName="cloudworkApi/Models/AuthUser.cs" />
-      <File FileName="cloudworkApi/Common/ResponseBuilder.cs" Line="52" Column="1" />
-      <File FileName="cloudworkApi/StoredProcedures/PKG_PROFILE.cs" Line="1" Column="1" />
-      <File FileName="cloudworkApi/Models/dsModels/dsUsersExample.cs" Line="6" Column="39" />
-      <File FileName="cloudworkApi/Models/dsModels/dsUserProfile.cs" Line="5" Column="6" />
-      <File FileName="cloudworkApi/DataManagers/GridManager.cs" Line="94" Column="26" />
+      <File FileName="cloudworkApi/Common/ResponseBuilder.cs" />
+      <File FileName="cloudworkApi/StoredProcedures/PKG_PROFILE.cs" />
+      <File FileName="cloudworkApi/Models/dsModels/dsUsersExample.cs" />
+      <File FileName="cloudworkApi/Models/dsModels/dsUserProfile.cs" />
+      <File FileName="cloudworkApi/DataManagers/GridManager.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -23,10 +23,10 @@
           <Node name="cloudworkApi" expanded="True">
             <Node name="cloudworkApi" expanded="True">
               <Node name="Common" expanded="True" />
-              <Node name="Controllers" expanded="True" />
-              <Node name="DataManagers" expanded="True">
-                <Node name="GridManager.cs" selected="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="ProfileController.cs" selected="True" />
               </Node>
+              <Node name="DataManagers" expanded="True" />
               <Node name="Models" expanded="True">
                 <Node name="dsModels" expanded="True" />
               </Node>
