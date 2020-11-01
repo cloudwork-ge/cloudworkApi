@@ -59,7 +59,11 @@ namespace cloudworkApi
                 options.Cookie.HttpOnly = true;
                 options.Cookie.IsEssential = true;
             });
-            services.AddControllers();
+            services.AddControllers().AddMvcOptions(options =>
+            {
+                options.ModelBindingMessageProvider.SetValueMustNotBeNullAccessor(_ => "ეს ველი აუცილებლად შესავსებია");
+
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
