@@ -9,6 +9,7 @@ namespace cloudworkApi.Models.dsModels
         public Project()
         {
         }
+        public int ID { get; set; }
         [Required(ErrorMessage = "გთხოვთ შეავსოთ კატეგორია")]
         public int projectCategory { get; set; }
         [Required(ErrorMessage = "გთხოვთ შეავსოთ ტიპი")]
