@@ -5,7 +5,7 @@ using cloudworkApi.DataManagers;
 namespace cloudworkApi.Models.dsModels
 {
     public class Project:DataManager
-    {
+    { 
         public Project()
         {
         }
@@ -24,7 +24,9 @@ namespace cloudworkApi.Models.dsModels
         [Range(1,int.MaxValue,ErrorMessage = "მინიმალური ბიუჯეტი არის 1 ლარი")]
         public int budget { get; set; }
         public DateTime startDate { get; set; }
+        public string startDateStr => startDate.ToString("dd-MM-yyyy");
         public DateTime endDate { get; set; }
+        public string endDateStr => endDate.ToString("dd-MM-yyyy");
         public int monthsLength { get; set; }
 
     }

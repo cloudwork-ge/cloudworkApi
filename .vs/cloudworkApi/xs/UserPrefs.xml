@@ -1,15 +1,15 @@
 ﻿<Properties StartupConfiguration="{EC2D071E-2CE7-4D81-A033-B0EE91762D4F}|Custom">
-  <MonoDevelop.Ide.Workbench ActiveDocument="cloudworkApi/Startup.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="cloudworkApi/Controllers/ProjectController.cs">
     <Files>
       <File FileName="cloudworkApi/Attributes/AuthorizationAttribute.cs" Line="22" Column="1" />
-      <File FileName="cloudworkApi/Models/dsModels/Project.cs" Line="14" Column="19" />
-      <File FileName="cloudworkApi/StoredProcedures/PKG_PROJECT.cs" Line="20" Column="1" />
-      <File FileName="cloudworkApi/Controllers/ProjectController.cs" Line="51" Column="66" />
-      <File FileName="cloudworkApi/Common/ResponseBuilder.cs" Line="52" Column="1" />
-      <File FileName="cloudworkApi/DataManagers/DataManager.cs" Line="41" Column="18" />
-      <File FileName="cloudworkApi/Controllers/MainController.cs" Line="57" Column="10" />
-      <File FileName="cloudworkApi/Program.cs" Line="1" Column="1" />
-      <File FileName="cloudworkApi/Startup.cs" Line="43" Column="37" />
+      <File FileName="cloudworkApi/Models/dsModels/Project.cs" Line="25" Column="40" />
+      <File FileName="cloudworkApi/StoredProcedures/PKG_PROJECT.cs" />
+      <File FileName="cloudworkApi/Controllers/ProjectController.cs" Line="46" Column="10" />
+      <File FileName="cloudworkApi/Common/ResponseBuilder.cs" />
+      <File FileName="cloudworkApi/DataManagers/DataManager.cs" />
+      <File FileName="cloudworkApi/Controllers/MainController.cs" />
+      <File FileName="cloudworkApi/Program.cs" />
+      <File FileName="cloudworkApi/Startup.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -18,13 +18,14 @@
             <Node name="cloudworkApi" expanded="True">
               <Node name="Attributes" expanded="True" />
               <Node name="Common" expanded="True" />
-              <Node name="Controllers" expanded="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="ProjectController.cs" selected="True" />
+              </Node>
               <Node name="DataManagers" expanded="True" />
               <Node name="Models" expanded="True">
                 <Node name="dsModels" expanded="True" />
               </Node>
               <Node name="StoredProcedures" expanded="True" />
-              <Node name="Startup.cs" selected="True" />
             </Node>
           </Node>
         </State>

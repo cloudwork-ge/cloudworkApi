@@ -44,7 +44,6 @@ namespace cloudworkApi.Controllers
             grid.dsViewName = "V_PROJECT_CATEGORIES";
             return Success(grid.GetData<dsProjectCategory>());
         }
-        [Authorization]
         [HttpPost]
         public JsonDocument GetProjects([FromBody] Grid grid)
         {
