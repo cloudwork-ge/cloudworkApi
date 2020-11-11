@@ -18,6 +18,7 @@ using Microsoft.AspNetCore.Diagnostics;
 using cloudworkApi.Common;
 using cloudworkApi.StoredProcedures;
 using cloudworkApi.Models;
+using cloudworkApi.SqlDataBaseEntity;
 
 namespace cloudworkApi
 {

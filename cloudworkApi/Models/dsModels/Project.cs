@@ -23,11 +23,14 @@ namespace cloudworkApi.Models.dsModels
         [Required(ErrorMessage = "გთხოვთ შეავსოთ ბიუჯეტი")]
         [Range(1,int.MaxValue,ErrorMessage = "მინიმალური ბიუჯეტი არის 1 ლარი")]
         public int budget { get; set; }
+        public int status { get; set; }
+        public string statusTxt { get; set; }
         public DateTime startDate { get; set; }
         public string startDateStr => startDate.ToString("dd-MM-yyyy");
         public DateTime endDate { get; set; }
         public string endDateStr => endDate.ToString("dd-MM-yyyy");
         public int monthsLength { get; set; }
+        public int bidsCount { get; set; }
 
     }
 }

@@ -10,7 +10,7 @@ namespace cloudworkApi.Models.dsModels
         public string phone { get; set; }
         public string tin { get; set; }
         public string samforma { get; set; }
-        public decimal userType { get; set; }
+        public int userType { get; set; }
         public string userTypeTxt { get; set; }
         public string description { get; set; }
         public string workType { get; set; }

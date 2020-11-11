@@ -46,7 +46,7 @@ namespace cloudworkApi.StoredProcedures
             authUser = user;
             return Convert.ToBoolean(cmd.Parameters["@returnValue"].Value);
         }
-        public Boolean Register(string email, string password, string fullName, string phone, string tin, string samformaType, decimal userType)
+        public Boolean Register(string email, string password, string fullName, string phone, string tin, string samformaType = "", decimal userType = 0)
         {
             //var connString = _connectionString;
             //SqlConnection connection = new SqlConnection(connString);

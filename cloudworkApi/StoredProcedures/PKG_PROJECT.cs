@@ -1,6 +1,8 @@
-﻿using cloudworkApi.DataManagers;
+﻿using cloudworkApi.Common;
+using cloudworkApi.DataManagers;
 using cloudworkApi.Models;
 using cloudworkApi.Models.dsModels;
+using cloudworkApi.SqlDataBaseEntity;
 using Microsoft.AspNetCore.Razor.Language.Intermediate;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -16,6 +18,10 @@ namespace cloudworkApi.StoredProcedures
 {
     public class PKG_PROJECT : DataManager
     {
+        public PKG_PROJECT()
+        {
+        }
+
         public void AddProject(int userID, Project project)
         {
             //var connString = _connectionString;
@@ -40,6 +46,23 @@ namespace cloudworkApi.StoredProcedures
 
             this.ExecuteNonQuery(cmd);
             //connection.Close();
+        }
+        public void BidProject(ProjectBids projectBid)
+        {
+            using CloudWorkContext context = new CloudWorkContext();
+
+            if (context.ProjectBids.Count(pb => pb.userID == projectBid.userID && pb.projectID == projectBid.projectID) > 0)
+            {
+                ResponseBuilder.throwError("თქვენ უკვე გაგზავნილი გაქვთ შეთავაზება");
+            }
+            context.ProjectBids.Add(projectBid);
+            context.SaveChanges();
+        }
+        public IQueryable<Project> GetProjects()
+        {
+            using CloudWorkContext context = new CloudWorkContext();
+            var projects = context.Projects.Select(x => x).Where(c => c.ID > 0);
+            return projects;
         }
     }
 }

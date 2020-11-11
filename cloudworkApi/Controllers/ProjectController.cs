@@ -31,9 +31,9 @@ namespace cloudworkApi.Controllers
 {
     public class ProjectController : MainController
     {
-        private readonly PKG_PROJECT _pkg_project = new PKG_PROJECT();
+        private readonly PKG_PROJECT _pkg_project;
         public ProjectController() {
-        //    _pkg_users = new pkg_USERS;
+            _pkg_project = new PKG_PROJECT();
         }
 
         [Authorization]
@@ -41,6 +41,7 @@ namespace cloudworkApi.Controllers
         public JsonDocument GetCategories([FromBody] Grid grid)
         {
             //grid.Criteria = string.Format("WHERE Id = {0}", authUser.ID);
+            //var x = _pkg_project.GetProjects();
             grid.dsViewName = "V_PROJECT_CATEGORIES";
             return Success(grid.GetData<dsProjectCategory>());
         }
@@ -49,8 +50,21 @@ namespace cloudworkApi.Controllers
         {
             //grid.Criteria = string.Format("WHERE Id = {0}", authUser.ID);
             grid.dsViewName = "V_PROJECTS";
+            grid.OrderBy = "ID DESC";
             return Success(grid.GetData<Project>());
         }
+
+        [HttpPost]
+        [Authorization]
+        public JsonDocument GetMyProjects([FromBody] Grid grid)
+        {
+            //grid.Criteria = string.Format("WHERE Id = {0}", authUser.ID);
+            grid.dsViewName = "V_PROJECTS_AND_BIDS";
+            grid.Criteria = String.Format("WHERE userID = {0}", authUser.ID);
+
+            return Success(grid.GetData<Project>());
+        }
+
         [Authorization]
         [HttpPost]
         public JsonDocument AddProject([FromBody] Project project)
@@ -63,6 +77,14 @@ namespace cloudworkApi.Controllers
             {
                 return throwError(ex.Message, -1);
             }
+            return Success();
+        }
+        [Authorization]
+        [HttpPost]
+        public JsonDocument BidProject([FromBody] ProjectBids bid)
+        {
+            bid.userID = authUser.ID;
+            _pkg_project.BidProject(bid);
             return Success();
         }
     }
