@@ -55,6 +55,10 @@ namespace cloudworkApi.StoredProcedures
             {
                 ResponseBuilder.throwError("თქვენ უკვე გაგზავნილი გაქვთ შეთავაზება");
             }
+            if (context.Projects.Count(p => p.ID == projectBid.projectID && p.userId == projectBid.userID) > 0)
+            {
+                ResponseBuilder.throwError("თქვენივე დადებულ პროექტზე შეთავაზებას ვერ გააგზავნით");
+            }
             context.ProjectBids.Add(projectBid);
             context.SaveChanges();
         }

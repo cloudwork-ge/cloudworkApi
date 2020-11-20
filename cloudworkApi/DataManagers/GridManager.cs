@@ -134,7 +134,8 @@ namespace cloudworkApi.DataManagers
                 var startRowIndex = (endRowIndex - this.MaximumRows) + 1; // + 1 იმიტომ რომ between 1 and 4 მუშაობს 4 ის ჩათვლით და მეორე გვერდზე რო გადავალ წინაზე რაც ბოლო ჩანაწერი იყო ის აღარ წამოვიდეს
                 var rangeSql = "WHERE RowNum BETWEEN " + startRowIndex + " AND " + endRowIndex;
 
-                cmd.CommandText = String.Format("select * from (select (select COUNT(*) from Users) Count, *, ROW_NUMBER() OVER({3}) AS RowNum from {0} WHERE 1=1 {1}) as t {2}", this.dsViewName,criteriaWithFilters,rangeSql,orderBySql);
+                var countSql = string.Format("(select COUNT(*) from {0} WHERE 1=1 {1}) Count,", this.dsViewName, criteriaWithFilters);
+                cmd.CommandText = String.Format("select * from (select {4} *, ROW_NUMBER() OVER({3}) AS RowNum from {0} WHERE 1=1 {1}) as t {2}", this.dsViewName,criteriaWithFilters,rangeSql,orderBySql,countSql);
                 cmd.Parameters.AddWithValue("viewName", this.dsViewName);
                 connection.Open();
                 //cmd.ExecuteNonQuery();
@@ -147,6 +148,7 @@ namespace cloudworkApi.DataManagers
                 //}
                 connection.Close();
             }
+
     }
     public class FilterParam 
     {

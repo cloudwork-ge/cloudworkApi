@@ -1,9 +1,10 @@
 ﻿using System;
 using System.ComponentModel;
+using cloudworkApi.DataManagers;
 
 namespace cloudworkApi.Models.dsModels
 {
-    public class ProjectBids
+    public class ProjectBids : DataManager
     {
        public int ID { get; set; }
        public int userID { get; set; }
@@ -15,6 +16,8 @@ namespace cloudworkApi.Models.dsModels
        public int status { get; set; } // -1 Rejected, 0 - Pending, 1 - Accepted
        private DateTime _create_date = DateTime.Now;
        public DateTime createDate { get { return _create_date; } set { return; } }
+       public string fullName { get; set; }
+
 
     }
 }

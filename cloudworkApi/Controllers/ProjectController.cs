@@ -53,7 +53,26 @@ namespace cloudworkApi.Controllers
             grid.OrderBy = "ID DESC";
             return Success(grid.GetData<Project>());
         }
-
+        [HttpPost]
+        [Authorization]
+        public JsonDocument GetProjectDetails([FromBody] ProjectDetails project)
+        {
+            var grid = new Grid();
+            //grid.Criteria = string.Format("WHERE Id = {0}", authUser.ID);
+            grid.Criteria = string.Format("WHERE ID = {0}", project.ID);
+            return this.GetProjects(grid);
+        }
+        [HttpPost]
+        [Authorization]
+        public JsonDocument GetProjectBids([FromBody] JsonElement project)
+        {
+            var grid = new Grid();
+            //grid.Criteria = string.Format("WHERE Id = {0}", authUser.ID);
+            grid.dsViewName = "V_BIDS";
+            grid.OrderBy = "ID DESC";
+            grid.Criteria = string.Format("WHERE projectId = {0}", project.GetProperty("projectId"));
+            return Success(grid.GetData<ProjectBids>());
+        }
         [HttpPost]
         [Authorization]
         public JsonDocument GetMyProjects([FromBody] Grid grid)

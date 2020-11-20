@@ -1,25 +1,24 @@
 ﻿<Properties StartupConfiguration="{EC2D071E-2CE7-4D81-A033-B0EE91762D4F}|Custom">
-  <MonoDevelop.Ide.Workbench ActiveDocument="cloudworkApi/Models/dsModels/dsUserProfile.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="cloudworkApi/Controllers/UsersController.cs">
     <Files>
-      <File FileName="cloudworkApi/Models/dsModels/ProjectBids.cs" Line="13" Column="30" IsPinned="True" />
-      <File FileName="cloudworkApi/StoredProcedures/PKG_PROJECT.cs" Line="1" Column="1" IsPinned="True" />
-      <File FileName="cloudworkApi/Attributes/AuthorizationAttribute.cs" />
-      <File FileName="cloudworkApi/Controllers/ProjectController.cs" Line="64" Column="43" />
-      <File FileName="cloudworkApi/Common/ResponseBuilder.cs" Line="1" Column="1" />
+      <File FileName="cloudworkApi/Controllers/ProjectController.cs" Line="61" Column="27" />
+      <File FileName="cloudworkApi/Attributes/AuthorizationAttribute.cs" Line="1" Column="1" />
+      <File FileName="cloudworkApi/Common/ResponseBuilder.cs" Line="49" Column="22" />
       <File FileName="cloudworkApi/Controllers/MainController.cs" />
       <File FileName="cloudworkApi/Program.cs" />
       <File FileName="cloudworkApi/Startup.cs" />
       <File FileName="cloudworkApi/SqlDataBaseEntity/CloudWorkContext.cs" />
-      <File FileName="cloudworkApi/DataManagers/GridManager.cs" />
-      <File FileName="cloudworkApi/DataManagers/DataManager.cs" />
       <File FileName="cloudworkApi/StoredProcedures/PKG_ERROR_LOGS.cs" />
       <File FileName="cloudworkApi/StoredProcedures/PKG_PROFILE.cs" />
-      <File FileName="cloudworkApi/StoredProcedures/PKG_USERS.cs" Line="65" Column="33" />
-      <File FileName="cloudworkApi/Controllers/UsersController.cs" />
+      <File FileName="cloudworkApi/StoredProcedures/PKG_USERS.cs" />
+      <File FileName="cloudworkApi/Controllers/UsersController.cs" Line="1" Column="1" />
       <File FileName="cloudworkApi/Models/UserCredentials.cs" />
-      <File FileName="cloudworkApi/Models/dsModels/Project.cs" Line="13" Column="38" />
-      <File FileName="cloudworkApi/Controllers/ProfileController.cs" Line="39" Column="45" />
-      <File FileName="cloudworkApi/Models/dsModels/dsUserProfile.cs" Line="6" Column="18" />
+      <File FileName="cloudworkApi/Controllers/ProfileController.cs" />
+      <File FileName="cloudworkApi/Models/dsModels/dsUserProfile.cs" />
+      <File FileName="cloudworkApi/StoredProcedures/PKG_PROJECT.cs" Line="64" Column="10" />
+      <File FileName="cloudworkApi/Models/dsModels/ProjectBids.cs" Line="19" Column="29" />
+      <File FileName="cloudworkApi/Models/dsModels/Project.cs" Line="56" Column="43" />
+      <File FileName="cloudworkApi/Models/AuthUser.cs" Line="17" Column="45" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -28,19 +27,22 @@
             <Node name="cloudworkApi" expanded="True">
               <Node name="Attributes" expanded="True" />
               <Node name="Common" expanded="True" />
-              <Node name="Controllers" expanded="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="UsersController.cs" selected="True" />
+              </Node>
               <Node name="DataManagers" expanded="True" />
               <Node name="Migrations" expanded="True" />
               <Node name="Models" expanded="True">
-                <Node name="dsModels" expanded="True">
-                  <Node name="dsUserProfile.cs" selected="True" />
-                </Node>
+                <Node name="dsModels" expanded="True" />
               </Node>
               <Node name="SqlDataBaseEntity" expanded="True" />
               <Node name="StoredProcedures" expanded="True" />
             </Node>
           </Node>
         </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
@@ -62,6 +64,9 @@
       <Breakpoint file="/Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/Controllers/UsersController.cs" relfile="cloudworkApi/Controllers/UsersController.cs" line="74" column="1" />
       <Breakpoint file="/Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/Controllers/UsersController.cs" relfile="cloudworkApi/Controllers/UsersController.cs" line="73" column="1" />
       <Breakpoint file="/Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/StoredProcedures/PKG_USERS.cs" relfile="cloudworkApi/StoredProcedures/PKG_USERS.cs" line="61" column="1" />
+      <Breakpoint file="/Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/DataManagers/GridManager.cs" relfile="cloudworkApi/DataManagers/GridManager.cs" line="81" column="1" />
+      <Breakpoint file="/Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/Controllers/ProjectController.cs" relfile="cloudworkApi/Controllers/ProjectController.cs" line="54" column="1" />
+      <Breakpoint file="/Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/Controllers/ProjectController.cs" relfile="cloudworkApi/Controllers/ProjectController.cs" line="62" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

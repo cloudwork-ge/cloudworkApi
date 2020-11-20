@@ -95,6 +95,7 @@ namespace cloudworkApi.Controllers
         public JsonDocument GetUserData()
         {
             var dict = new Dictionary<string, object>();
+            dict.Add("ID", authUser.ID);
             dict.Add("fullName", authUser.fullName);
             dict.Add("email", authUser.email);
             dict.Add("userType", authUser.userType);
