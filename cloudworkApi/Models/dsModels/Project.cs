@@ -1,11 +1,13 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using cloudworkApi.DataManagers;
 
 namespace cloudworkApi.Models.dsModels
 {
+    [Table("V_Projects")]
     public class Project:DataManager
-    { 
+    {
         public Project()
         {
         }
@@ -32,7 +34,10 @@ namespace cloudworkApi.Models.dsModels
         public int monthsLength { get; set; }
         public int bidsCount { get; set; }
         public int userId { get; set; }
+        public int workerUserId { get; set; }
+        public string workerFullName { get; set;}
     }
+
     public class ProjectDetails
     {
         public int ID { get; set; }
@@ -45,7 +50,7 @@ namespace cloudworkApi.Models.dsModels
         public string projectCriteria { get; set; }
         public int budget { get; set; }
         public int status { get; set; }
-        public string statusTxt { get; set; }
+        public string statusText { get; set; }
         public DateTime startDate { get; set; }
         public string startDateStr => startDate.ToString("dd-MM-yyyy");
         public DateTime endDate { get; set; }
@@ -53,6 +58,8 @@ namespace cloudworkApi.Models.dsModels
         public int monthsLength { get; set; }
         public int bidsCount { get; set; }
         public int userId { get; set; }
+        public string workerUserId { get; set; }
+        public string workerFullName { get; set; }
         public int isMyProject { get; set;}
     }
 }

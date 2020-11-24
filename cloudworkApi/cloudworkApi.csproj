@@ -23,5 +23,6 @@
     <Folder Include="Services\" />
     <Folder Include="Models\dsModels\" />
     <Folder Include="SqlDataBaseEntity\" />
+    <Folder Include="Models\tableModels\" />
   </ItemGroup>
 </Project>

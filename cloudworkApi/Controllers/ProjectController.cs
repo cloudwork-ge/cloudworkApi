@@ -57,10 +57,15 @@ namespace cloudworkApi.Controllers
         [Authorization]
         public JsonDocument GetProjectDetails([FromBody] ProjectDetails project)
         {
-            var grid = new Grid();
+            var s = _pkg_project.GetProject(project.ID, authUser.ID);
+            return Success(s);
+            //var grid = new Grid();
             //grid.Criteria = string.Format("WHERE Id = {0}", authUser.ID);
-            grid.Criteria = string.Format("WHERE ID = {0}", project.ID);
-            return this.GetProjects(grid);
+            //grid.Criteria = string.Format("WHERE ID = {0}", project.ID);
+            //grid.dsViewName = "V_PROJECTS";
+            //grid.OrderBy = "ID DESC";
+            //return Success(grid.GetData<Project>());
+            //return this.GetProjects(grid);
         }
         [HttpPost]
         [Authorization]
@@ -79,9 +84,23 @@ namespace cloudworkApi.Controllers
         {
             //grid.Criteria = string.Format("WHERE Id = {0}", authUser.ID);
             grid.dsViewName = "V_PROJECTS_AND_BIDS";
-            grid.Criteria = String.Format("WHERE userID = {0}", authUser.ID);
+            grid.Criteria = String.Format("WHERE (userID = {0} OR workerUserID = {0})", authUser.ID);
 
             return Success(grid.GetData<Project>());
+        }
+        [HttpPost]
+        [Authorization]
+        public JsonDocument AcceptBid([FromBody] ProjectBids bid)
+        {
+            _pkg_project.AcceptBid(bid.ID, authUser.ID);
+            return Success();
+            //var grid = new Grid();
+            //grid.Criteria = string.Format("WHERE Id = {0}", authUser.ID);
+            //grid.Criteria = string.Format("WHERE ID = {0}", project.ID);
+            //grid.dsViewName = "V_PROJECTS";
+            //grid.OrderBy = "ID DESC";
+            //return Success(grid.GetData<Project>());
+            //return this.GetProjects(grid);
         }
 
         [Authorization]
@@ -100,7 +119,7 @@ namespace cloudworkApi.Controllers
         }
         [Authorization]
         [HttpPost]
-        public JsonDocument BidProject([FromBody] ProjectBids bid)
+        public JsonDocument BidProject([FromBody] tbProjectBids bid)
         {
             bid.userID = authUser.ID;
             _pkg_project.BidProject(bid);
