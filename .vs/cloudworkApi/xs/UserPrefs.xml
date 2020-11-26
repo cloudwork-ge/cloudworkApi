@@ -1,20 +1,20 @@
 ﻿<Properties StartupConfiguration="{EC2D071E-2CE7-4D81-A033-B0EE91762D4F}|Custom">
-  <MonoDevelop.Ide.Workbench ActiveDocument="cloudworkApi/Models/tableModels/tbProjects.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="cloudworkApi/Controllers/ProjectController.cs">
     <Files>
-      <File FileName="cloudworkApi/Controllers/ProjectController.cs" Line="95" Column="1" />
-      <File FileName="cloudworkApi/StoredProcedures/PKG_PROJECT.cs" Line="97" Column="36" />
-      <File FileName="cloudworkApi/Common/ResponseBuilder.cs" Line="52" Column="1" />
-      <File FileName="cloudworkApi/DataManagers/GridManager.cs" Line="81" Column="1" />
-      <File FileName="cloudworkApi/SqlDataBaseEntity/CloudWorkContext.cs" Line="14" Column="29" />
-      <File FileName="cloudworkApi/Controllers/UsersController.cs" Line="55" Column="1" />
-      <File FileName="cloudworkApi/Models/tableModels/tbProjectBids.cs" Line="18" Column="83" />
-      <File FileName="cloudworkApi/Models/tableModels/tbProjects.cs" Line="23" Column="37" />
+      <File FileName="cloudworkApi/StoredProcedures/PKG_PROJECT.cs" Line="77" Column="62" />
+      <File FileName="cloudworkApi/Controllers/ProjectController.cs" Line="53" Column="87" />
+      <File FileName="cloudworkApi/Common/ResponseBuilder.cs" />
+      <File FileName="cloudworkApi/DataManagers/GridManager.cs" />
+      <File FileName="cloudworkApi/SqlDataBaseEntity/CloudWorkContext.cs" />
+      <File FileName="cloudworkApi/Controllers/UsersController.cs" />
+      <File FileName="cloudworkApi/Models/tableModels/tbProjectBids.cs" />
+      <File FileName="cloudworkApi/Models/tableModels/tbProjects.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="cloudworkApi" expanded="True">
-            <Node name="cloudworkApi" expanded="True">
+            <Node name="cloudworkApi" expanded="True" selected="True">
               <Node name="Attributes" expanded="True" />
               <Node name="Common" expanded="True" />
               <Node name="Controllers" expanded="True" />
@@ -22,18 +22,13 @@
               <Node name="Migrations" expanded="True" />
               <Node name="Models" expanded="True">
                 <Node name="dsModels" expanded="True" />
-                <Node name="tableModels" expanded="True">
-                  <Node name="tbProjects.cs" selected="True" />
-                </Node>
+                <Node name="tableModels" expanded="True" />
               </Node>
               <Node name="SqlDataBaseEntity" expanded="True" />
               <Node name="StoredProcedures" expanded="True" />
             </Node>
           </Node>
         </State>
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
@@ -55,8 +50,9 @@
       <Breakpoint file="/Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/Controllers/UsersController.cs" relfile="cloudworkApi/Controllers/UsersController.cs" line="74" column="1" />
       <Breakpoint file="/Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/Controllers/UsersController.cs" relfile="cloudworkApi/Controllers/UsersController.cs" line="73" column="1" />
       <Breakpoint file="/Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/StoredProcedures/PKG_USERS.cs" relfile="cloudworkApi/StoredProcedures/PKG_USERS.cs" line="61" column="1" />
-      <Breakpoint file="/Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/Controllers/ProjectController.cs" relfile="cloudworkApi/Controllers/ProjectController.cs" line="95" column="1" />
+      <Breakpoint file="/Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/Controllers/ProjectController.cs" relfile="cloudworkApi/Controllers/ProjectController.cs" line="96" column="1" />
       <Breakpoint file="/Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/StoredProcedures/PKG_PROJECT.cs" relfile="cloudworkApi/StoredProcedures/PKG_PROJECT.cs" line="96" column="1" />
+      <Breakpoint file="/Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/DataManagers/GridManager.cs" relfile="cloudworkApi/DataManagers/GridManager.cs" line="112" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

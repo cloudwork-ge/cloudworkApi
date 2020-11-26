@@ -48,9 +48,10 @@ namespace cloudworkApi.Controllers
         [HttpPost]
         public JsonDocument GetProjects([FromBody] Grid grid)
         {
-            //grid.Criteria = string.Format("WHERE Id = {0}", authUser.ID);
             grid.dsViewName = "V_PROJECTS";
             grid.OrderBy = "ID DESC";
+            grid.Criteria = string.Format("WHERE status = 0"); // მხოლოდ ღია პროექტები
+
             return Success(grid.GetData<Project>());
         }
         [HttpPost]
