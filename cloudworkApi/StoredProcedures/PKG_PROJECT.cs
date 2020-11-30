@@ -83,7 +83,7 @@ namespace cloudworkApi.StoredProcedures
                     status = x.status,
                     statusText = x.statusText,
                     userId = x.userId,
-                    workerUserId = x.workerUserId.ToString(),
+                    workerUserId = x.workerUserId,
                     startDate = x.startDate,
                     workerFullName = x.workerFullName,
                     endDate = x.endDate}).FirstOrDefault();

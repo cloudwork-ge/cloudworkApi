@@ -41,6 +41,7 @@ namespace cloudworkApi.DataManagers
         public Int32 Page { get { return _page; } set { if (value < 1) throw new Exception("გვერდის ნომერი უნდა იყოს 1 ზე მეტი"); _page = value; } }
         public string view { get; set; }
         public string dsViewName = string.Empty;
+        public List<FilterParam> CustomParams { get; set; }
         public Dictionary<string,object> GetData<T>() where T : class, new()
         {
             List<T> list = new List<T>();

@@ -58,7 +58,7 @@ namespace cloudworkApi.Models.dsModels
         public int monthsLength { get; set; }
         public int bidsCount { get; set; }
         public int userId { get; set; }
-        public string workerUserId { get; set; }
+        public int workerUserId { get; set; }
         public string workerFullName { get; set; }
         public int isMyProject { get; set;}
     }

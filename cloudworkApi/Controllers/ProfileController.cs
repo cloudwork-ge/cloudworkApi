@@ -34,8 +34,18 @@ namespace cloudworkApi.Controllers
         [Authorization]
         public JsonDocument GetUserProfile([FromBody] Grid grid)
         {
-            grid.Criteria = string.Format("WHERE Id = {0}", authUser.ID);
             grid.dsViewName = "V_USERS";
+
+            if (grid.CustomParams != null && grid.CustomParams.Count > 0)
+            {
+                var profileUserId = grid.CustomParams != null ? grid.CustomParams.Find(x => x.FieldName == "ProfileUserID") : null;
+                if (profileUserId != null && Convert.ToInt32(profileUserId.FilterValue) > 0)
+                    grid.Criteria = string.Format("WHERE Id = {0}", profileUserId.FilterValue);
+                return Success(grid.GetData<dsUserProfile>());
+            }
+
+            grid.Criteria = string.Format("WHERE Id = {0}", authUser.ID);
+
             return Success(grid.GetData<dsUserProfile>());
 
         }
