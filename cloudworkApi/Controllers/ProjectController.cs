@@ -26,6 +26,7 @@ using System.Web;
 using cloudworkApi.Common;
 using cloudworkApi.Services;
 using cloudworkApi.Models.dsModels;
+using cloudworkApi.Models.tableModels;
 
 namespace cloudworkApi.Controllers
 {
@@ -86,7 +87,7 @@ namespace cloudworkApi.Controllers
             //grid.Criteria = string.Format("WHERE Id = {0}", authUser.ID);
             grid.dsViewName = "V_PROJECTS_AND_BIDS";
             grid.Criteria = String.Format("WHERE (userID = {0} OR workerUserID = {0})", authUser.ID);
-
+            grid.OrderBy = "ID DESC";
             return Success(grid.GetData<Project>());
         }
         [HttpPost]
@@ -125,6 +126,39 @@ namespace cloudworkApi.Controllers
             bid.userID = authUser.ID;
             _pkg_project.BidProject(bid);
             return Success();
+        }
+        [Authorization]
+        [HttpPost]
+        public JsonDocument ProjectDoneFreelancer([FromBody] tbProjects project)
+        {
+            project.workerUserId = authUser.ID;
+
+            if (project.ID > 0)
+            {
+               project = _pkg_project.ProjectDoneFreelancer(project);
+                var ownerEmail = new PKG_USERS().getUserEmail(project.userId);
+                var projectDetailsHtml = project.name + "<br />" + project.ID + "<br />" + project.description + "<br />" + project.category + "<br />" + project.type + "<br />" + project.budget;
+                var email = new EmailService();
+                email.SendEmail(ownerEmail, "პროექტის დასრულების მოთხოვნა - ID: " + project.ID, projectDetailsHtml);
+                return Success();
+            }
+            else return throwError("პროექტი არ მოიძებნა");
+
+        }
+        [Authorization]
+        [HttpPost]
+        public JsonDocument ProjectDoneOwner([FromBody] tbProjects project)
+        {
+            project.userId = authUser.ID;
+            if (project.ID > 0)
+            {
+                project = _pkg_project.ProjectDoneOwner(project);
+                var email = new EmailService();
+                var projectDetailsHtml = project.name + "<br />" + project.ID + "<br />" + project.description + "<br />" + project.category + "<br />" + project.type + "<br />" + project.budget;
+                email.SendEmail("dima@ants.ge", "cloudwork.ge - პროექტი დასრულდა", projectDetailsHtml);
+                return Success();
+            }
+            else return throwError("პროექტი არ მოიძებნა");
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using cloudworkApi.DataManagers;
 using cloudworkApi.Models;
+using cloudworkApi.SqlDataBaseEntity;
 using Microsoft.AspNetCore.Razor.Language.Intermediate;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -96,6 +97,13 @@ namespace cloudworkApi.StoredProcedures
             reader.Close();
             connection.Close();
             return list;
+        }
+
+        public string getUserEmail(int userID)
+        {
+            using CloudWorkContext context = new CloudWorkContext();
+            var userEmail = context.Users.Where(a => a.ID == userID).Select(x => x.email).FirstOrDefault();
+            return userEmail;
         }
     }
 }

@@ -22,7 +22,9 @@ namespace cloudworkApi.Models.tableModels
         public DateTime end_date { get; set; }
         public int userId { get; set; }
         public int? workerUserId { get; set; }
-        public int? months_length { get; set;
-        }
+        public int? months_length { get; set; }
+        public int? doneRequested { get; set; }
+        public DateTime? doneRequestDate { get; set; }
+        public DateTime? doneDate { get; set; }
     }
 }

@@ -86,7 +86,9 @@ namespace cloudworkApi.StoredProcedures
                     workerUserId = x.workerUserId,
                     startDate = x.startDate,
                     workerFullName = x.workerFullName,
-                    endDate = x.endDate}).FirstOrDefault();
+                    endDate = x.endDate,
+                    doneRequested = x.doneRequested,
+                    doneRequestDate = x.doneRequestDate}).FirstOrDefault();
                 
             return project;
         }
@@ -116,6 +118,49 @@ namespace cloudworkApi.StoredProcedures
             //context.Projects.Update(project);
             context.SaveChanges();
 
+        }
+        public tbProjects ProjectDoneFreelancer(tbProjects project)
+        {
+            using CloudWorkContext context = new CloudWorkContext();
+            //var bid = context.ProjectBids.FirstOrDefault(b => b.ID == bidId);
+            var thisProject = context.Projects.Where(a => a.ID == project.ID && a.workerUserId == project.workerUserId).FirstOrDefault();
+
+            if (thisProject == null || thisProject.ID == 0)
+                ResponseBuilder.throwError("თქვენ არ გაქვთ ამ პროექტზე ცვლილებების უფლება");
+
+            if (thisProject.status != 1)
+                ResponseBuilder.throwError("იმისთვის რომ დაასრულოთ პროოექტი სტატუსი უნდა იყოს მიმდინარე");
+
+            if (thisProject.doneRequested == 1)
+                ResponseBuilder.throwError("ამ პროექტზე დასრულების მოთხოვნა უკვე გაგაზავნილია");
+
+
+            thisProject.doneRequested = 1;
+            thisProject.doneRequestDate = DateTime.Now;
+
+            context.SaveChanges();
+            return project;
+        }
+        public tbProjects ProjectDoneOwner(tbProjects project)
+        {
+            using CloudWorkContext context = new CloudWorkContext();
+            //var bid = context.ProjectBids.FirstOrDefault(b => b.ID == bidId);
+            var thisProject = context.Projects.Where(a => a.ID == project.ID && a.userId == project.userId).FirstOrDefault();
+
+            if (thisProject == null || thisProject.ID == 0)
+                ResponseBuilder.throwError("თქვენ არ გაქვთ ამ პროექტზე ცვლილებების უფლება");
+
+            if (thisProject.status != 1)
+                ResponseBuilder.throwError("იმისთვის რომ დაასრულოთ პროოექტი სტატუსი უნდა იყოს მიმდინარე");
+
+            if (thisProject.doneRequested == 0)
+                ResponseBuilder.throwError("ამ პროექტზე დასრულების მოთხოვნა ჯერ არ გაკეთებულა");
+
+            thisProject.status = 2;
+            thisProject.doneDate = DateTime.Now;
+
+            context.SaveChanges();
+            return thisProject;
         }
     }
 }

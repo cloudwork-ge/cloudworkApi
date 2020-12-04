@@ -1,7 +1,6 @@
 /Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/bin/Release/netcoreapp3.1/web.config
 /Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/bin/Release/netcoreapp3.1/appsettings.Development.json
 /Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/bin/Release/netcoreapp3.1/appsettings.json
-/Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/bin/Release/netcoreapp3.1/Properties/launchSettings.json
 /Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/bin/Release/netcoreapp3.1/cloudworkApi.deps.json
 /Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/bin/Release/netcoreapp3.1/cloudworkApi.runtimeconfig.json
 /Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/bin/Release/netcoreapp3.1/cloudworkApi.runtimeconfig.dev.json
@@ -133,3 +132,4 @@
 /Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/bin/Release/netcoreapp3.1/runtimes/unix/lib/netcoreapp2.1/Microsoft.Data.SqlClient.dll
 /Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/bin/Release/netcoreapp3.1/runtimes/win/lib/netcoreapp2.1/Microsoft.Data.SqlClient.dll
 /Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/bin/Release/netcoreapp3.1/Microsoft.EntityFrameworkCore.Design.dll
+/Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/obj/Release/netcoreapp3.1/scopedcss/bundle/cloudworkApi.styles.css
