@@ -19,6 +19,10 @@ using cloudworkApi.Common;
 using cloudworkApi.StoredProcedures;
 using cloudworkApi.Models;
 using cloudworkApi.SqlDataBaseEntity;
+using System.Net.WebSockets;
+using System.Threading;
+using System.Text;
+using cloudworkApi.Services;
 
 namespace cloudworkApi
 {
@@ -44,6 +48,7 @@ namespace cloudworkApi
             //services.AddSession();
 
             services.AddDistributedMemoryCache();
+
 
             services.Configure<CookiePolicyOptions>(options =>
             {
@@ -109,6 +114,16 @@ namespace cloudworkApi
 
             app.UseRouting();
 
+            var webSocketOptions = new WebSocketOptions()
+            {
+                KeepAliveInterval = TimeSpan.FromSeconds(120),
+                ReceiveBufferSize = 4 * 1024
+            };
+            //webSocketOptions.AllowedOrigins.Add("https://client.com");
+
+            app.UseWebSockets(webSocketOptions);
+
+
             app.UseAuthorization();
             app.UseSession();
 
@@ -116,8 +131,27 @@ namespace cloudworkApi
             {
                 endpoints.MapControllers();
             });
-            
-            
+
+            app.Use(async (context, next) =>
+            {
+                if (context.Request.Path == "/Chat")
+                {
+                    if (context.WebSockets.IsWebSocketRequest)
+                    {
+                        await new ChatService().GetAndSendMessage(context);
+                    }
+                    else
+                    {
+                        context.Response.StatusCode = 400;
+                    }
+                }
+                else
+                {
+                    await next();
+                }
+            });
+
         }
+        
     }
 }
