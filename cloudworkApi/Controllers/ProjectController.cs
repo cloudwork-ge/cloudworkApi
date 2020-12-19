@@ -85,7 +85,19 @@ namespace cloudworkApi.Controllers
         public JsonDocument GetMyProjects([FromBody] Grid grid)
         {
             //grid.Criteria = string.Format("WHERE Id = {0}", authUser.ID);
+
             grid.dsViewName = "V_PROJECTS_AND_BIDS";
+
+            if (grid.CustomParams != null && grid.CustomParams.Count > 0)
+            {
+                var profileUserId = grid.CustomParams != null ? grid.CustomParams.Find(x => x.FieldName == "ProfileUserID") : null;
+                if (profileUserId != null && Convert.ToInt32(profileUserId.FilterValue) > 0)
+                {
+                    grid.Criteria = string.Format("WHERE userID = {0}", profileUserId.FilterValue);
+                    return Success(grid.GetData<dsUserProfile>());
+                }
+            }
+
             grid.Criteria = String.Format("WHERE (userID = {0} OR workerUserID = {0})", authUser.ID);
             grid.OrderBy = "ID DESC";
             return Success(grid.GetData<Project>());
