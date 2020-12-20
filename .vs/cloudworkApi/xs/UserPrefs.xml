@@ -1,10 +1,10 @@
 ﻿<Properties StartupConfiguration="{EC2D071E-2CE7-4D81-A033-B0EE91762D4F}|Custom">
-  <MonoDevelop.Ide.Workbench ActiveDocument="cloudworkApi/DataManagers/GridManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="cloudworkApi/Controllers/ProjectController.cs">
     <Files>
       <File FileName="cloudworkApi/Startup.cs" Line="141" Column="1" />
       <File FileName="cloudworkApi/Services/ChatService.cs" Line="43" Column="54" />
       <File FileName="cloudworkApi/Controllers/ProfileController.cs" Line="39" Column="13" />
-      <File FileName="cloudworkApi/Controllers/ProjectController.cs" Line="93" Column="34" />
+      <File FileName="cloudworkApi/Controllers/ProjectController.cs" Line="48" Column="10" />
       <File FileName="cloudworkApi/Common/ResponseBuilder.cs" Line="52" Column="1" />
       <File FileName="cloudworkApi/Attributes/AuthorizationAttribute.cs" Line="22" Column="1" />
       <File FileName="cloudworkApi/DataManagers/GridManager.cs" Line="144" Column="1" />
@@ -16,10 +16,10 @@
             <Node name="cloudworkApi" expanded="True">
               <Node name="Attributes" expanded="True" />
               <Node name="Common" expanded="True" />
-              <Node name="Controllers" expanded="True" />
-              <Node name="DataManagers" expanded="True">
-                <Node name="GridManager.cs" selected="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="ProjectController.cs" selected="True" />
               </Node>
+              <Node name="DataManagers" expanded="True" />
               <Node name="Services" expanded="True" />
             </Node>
           </Node>
