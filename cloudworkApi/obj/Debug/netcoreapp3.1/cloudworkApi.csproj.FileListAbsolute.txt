@@ -124,12 +124,12 @@
 /Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/obj/Debug/netcoreapp3.1/cloudworkApi.AssemblyInfo.cs
 /Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/obj/Debug/netcoreapp3.1/cloudworkApi.csproj.CoreCompileInputs.cache
 /Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/obj/Debug/netcoreapp3.1/cloudworkApi.MvcApplicationPartsAssemblyInfo.cache
-/Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/obj/Debug/netcoreapp3.1/cloudworkApi.RazorTargetAssemblyInfo.cache
-/Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/obj/Debug/netcoreapp3.1/cloudworkApi.csproj.CopyComplete
 /Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/obj/Debug/netcoreapp3.1/staticwebassets/cloudworkApi.StaticWebAssets.Manifest.cache
 /Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/obj/Debug/netcoreapp3.1/staticwebassets/cloudworkApi.StaticWebAssets.xml
+/Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/obj/Debug/netcoreapp3.1/scopedcss/bundle/cloudworkApi.styles.css
+/Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/obj/Debug/netcoreapp3.1/cloudworkApi.RazorTargetAssemblyInfo.cache
+/Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/obj/Debug/netcoreapp3.1/cloudworkApi.csproj.CopyComplete
 /Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/obj/Debug/netcoreapp3.1/cloudworkApi.dll
 /Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/obj/Debug/netcoreapp3.1/cloudworkApi.pdb
 /Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/obj/Debug/netcoreapp3.1/cloudworkApi.genruntimeconfig.cache
 /Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/obj/Debug/netcoreapp3.1/cloudworkApi.csprojAssemblyReference.cache
-/Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/obj/Debug/netcoreapp3.1/scopedcss/bundle/cloudworkApi.styles.css

@@ -14,6 +14,7 @@ namespace cloudworkApi.SqlDataBaseEntity
         public DbSet<tbProjects> Projects { get; set; }
         public DbSet<Project> V_Projects { get; set; }
         public DbSet<tbUsers> Users { get; set; }
+        public DbSet<tbMessages> Messages { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(DataManager._connectionString);
