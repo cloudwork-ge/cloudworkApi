@@ -17,19 +17,52 @@ namespace cloudworkApi.Controllers
         {
             provider = new PKG_MESSAGES();
         }
-        
 
-        public void OpenChat()
-        {
-
-        }
-        [HttpGet]
+        [HttpPost]
         [Authorization]
-        public List<tbMessages> getMessages(Chat obj)
+        public List<tbMessages> OpenChat(Chat chat)
         {
-            var list = new List<tbMessages>();
-            return provider.getMessages(authUser.ID,obj.chatUserID);
-            return list;
+            if (chat.chatID > 0)
+                return getMessages(chat.chatID);
+            else return new List<tbMessages>();
+            //else
+            //{
+            //    int chatID = 0;
+            //    chatID = CreateOrGetChat(chat.chatUserID);
+            //    return getMessages(chatID);
+            //}
+        }
+
+        private List<tbMessages> getMessages(int chatID)
+        {
+            //var list = new List<tbMessages>();
+            return provider.GetMessages(authUser.ID,chatID);
+        }
+
+        [HttpPost]
+        [Authorization]
+        public tbChats CreateOrGetChat(Chat pChat)
+        {
+            tbChats chat = new tbChats();
+            if (provider.CanContact(authUser.ID, pChat.chatUserID))
+            {
+                chat = provider.CreateOrGetChat(authUser.ID, pChat.chatUserID);
+            }
+            else throwError("ამ ოპერაციის განხორციელების უფლება არ გაქვთ.");
+            return chat;
+        }
+        [HttpPost]
+        [Authorization]
+        public void SendMessage(Message message)
+        {
+            provider.SendMessage(message.messageText, authUser.ID, message.chatID);
+        }
+        [HttpPost]
+        [Authorization]
+        public List<tbChats> GetRecentChats()
+        {
+            var chats = provider.GetRecentChats(authUser.ID);
+            return chats;
         }
     }
 }

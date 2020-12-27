@@ -4,13 +4,12 @@ using cloudworkApi.Models.tableModels;
 
 namespace cloudworkApi.Models.dsModels
 {
-    [Table("V_Messages")]
-    public class Message : tbMessages
+    public class Message
     {
         public Message()
         {
         }
-        public string fromUserName {get; set;}
-        public string toUserName {get; set;}
+        public int chatID { get; set; }
+        public string messageText {get; set;}
     }
 }

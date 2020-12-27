@@ -18,5 +18,7 @@ namespace cloudworkApi.Models.tableModels
         public DateTime createDate { get; set; }
         public int read { get; set; } // 0 - unread, 1 - read
         public DateTime? readDate { get; set; }
+        public int chatID { get; set; }
+
     }
 }
