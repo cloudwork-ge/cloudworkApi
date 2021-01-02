@@ -3,6 +3,7 @@ using cloudworkApi.DataManagers;
 using cloudworkApi.Models;
 using cloudworkApi.Models.dsModels;
 using cloudworkApi.Models.tableModels;
+using cloudworkApi.Services;
 using cloudworkApi.SqlDataBaseEntity;
 using Microsoft.AspNetCore.Razor.Language.Intermediate;
 using Microsoft.Extensions.Configuration;
@@ -60,9 +61,13 @@ namespace cloudworkApi.StoredProcedures
             {
                 ResponseBuilder.throwError("თქვენივე დადებულ პროექტზე შეთავაზებას ვერ გააგზავნით");
             }
-            
+            var project = context.Projects.Where(x => x.ID == projectBid.projectID).FirstOrDefault();
+            int projectOwnerID = project.userId;
+            string projectOwnerEmail = new PKG_USERS().getUserEmail(projectOwnerID);
             context.ProjectBids.Add(projectBid);
             context.SaveChanges();
+
+            new EmailService().SendEmail(projectOwnerEmail, "ახალი შემოთავაზება", "თქვენ გაქვთ ახალი შემოთავაზება პროექტზე <b>" + project.name + "</b>");
         }
         public IQueryable<tbProjects> GetProjects()
         {
@@ -117,7 +122,12 @@ namespace cloudworkApi.StoredProcedures
             //context.ProjectBids.Update(bid);
             //context.Projects.Update(project);
             context.SaveChanges();
+            var users = new PKG_USERS();
 
+            string workerEmail = users.getUserEmail(Convert.ToInt32(project.workerUserId));
+            string ownerEmail = users.getUserEmail(Convert.ToInt32(project.userId));
+            new EmailService().SendEmail(workerEmail, "დამსაქმებელი დაეთანხმა თქვენ შეთავაზებას", "თქვენი შეტავაზება პროექტზე მიღებულია. შეგიძლიათ დაეკონტაქტოთ დამსაქმებელს ჩვენი პორტალიდან <br />პროექტი:<h1><a href='http://cloudwork.ge/ProjectDetails/'" + project.ID + ">" + project.name + "</a></h1>");
+            new EmailService().SendEmail(ownerEmail, "პროექტის დაწყება", "თქვენ დაეთანხმეთ ფრილანსერის შემოთავაზებას <a href='http://cloudwork.ge/ProjectDetails/'" + project.ID + ">" + project.name + "</a>");
         }
         public tbProjects ProjectDoneFreelancer(tbProjects project)
         {

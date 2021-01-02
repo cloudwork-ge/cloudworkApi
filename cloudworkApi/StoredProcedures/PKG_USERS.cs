@@ -105,5 +105,15 @@ namespace cloudworkApi.StoredProcedures
             var userEmail = context.Users.Where(a => a.ID == userID).Select(x => x.email).FirstOrDefault();
             return userEmail;
         }
+        public List<int> getUnreadChatIDs(int userID)
+        {
+            using CloudWorkContext context = new CloudWorkContext();
+            List<int> chatIDs = context.Chats.Where(x => x.firstUserID == userID || x.secondUserID == userID).Select(a => a.ID).ToList();
+
+            List<int> unreadChatIds = new List<int>();
+            unreadChatIds = context.Messages.Where(a => a.read == 0 && chatIDs.Contains(a.chatID) && a.fromUserID != userID).Select(a=>a.chatID).Distinct().ToList();
+
+            return unreadChatIds;
+        }
     }
 }

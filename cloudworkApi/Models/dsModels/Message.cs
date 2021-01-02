@@ -9,6 +9,7 @@ namespace cloudworkApi.Models.dsModels
         public Message()
         {
         }
+        public int ID { get; set; }
         public int chatID { get; set; }
         public string messageText {get; set;}
     }

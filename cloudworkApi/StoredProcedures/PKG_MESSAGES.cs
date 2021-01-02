@@ -28,7 +28,7 @@ namespace cloudworkApi.StoredProcedures
             var messagesAll = new List<tbMessages>();
             try
             {
-                messagesAll = context.Messages.Where(x => x.chatID == chatID).ToList();
+                messagesAll = context.Messages.Where(x => x.chatID == chatID).OrderBy(x=>x.ID).ToList();
             }
             catch(Exception ex)
             {
@@ -127,6 +127,23 @@ namespace cloudworkApi.StoredProcedures
                 chat.Name = chat.firstUserID == userID ? chat.secondUserName : chat.firstUserName;
 
             return chat.Name;
+        }
+        public void MarkAsRead(int userID, int chatID, int messageID)
+        {
+            using CloudWorkContext context = new CloudWorkContext();
+            var prevMessages = new List<tbMessages>();
+            var chatCount = 0;
+            chatCount = context.Chats.Count(x => x.ID == chatID && (x.firstUserID == userID || x.secondUserID == userID));
+            if (chatCount > 0)
+            {
+                prevMessages = context.Messages.Where(x => x.ID <= messageID && x.chatID == chatID && x.fromUserID != userID && x.read == 0).ToList();
+                if (prevMessages != null && prevMessages.Count > 0)
+                {
+                    var updated = prevMessages.Select(x => { x.read = 1; x.readDate = DateTime.Now; return x; });
+                    context.Messages.UpdateRange(updated);
+                    context.SaveChanges();
+                }
+            }
         }
     }
 }

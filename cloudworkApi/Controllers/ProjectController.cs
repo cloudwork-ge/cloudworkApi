@@ -167,7 +167,11 @@ namespace cloudworkApi.Controllers
                 project = _pkg_project.ProjectDoneOwner(project);
                 var email = new EmailService();
                 var projectDetailsHtml = project.name + "<br />" + project.ID + "<br />" + project.description + "<br />" + project.category + "<br />" + project.type + "<br />" + project.budget;
-                email.SendEmail("dima@ants.ge", "cloudwork.ge - პროექტი დასრულდა", projectDetailsHtml);
+                var users = new PKG_USERS();
+                var workerEmail = users.getUserEmail(Convert.ToInt32(project.workerUserId));
+                var ownerEmail = users.getUserEmail(Convert.ToInt32(project.userId));
+                email.SendEmail(workerEmail, "cloudwork.ge - პროექტი დასრულდა", projectDetailsHtml);
+                email.SendEmail(ownerEmail, "cloudwork.ge - პროექტი დასრულდა", projectDetailsHtml);
                 return Success();
             }
             else return throwError("პროექტი არ მოიძებნა");

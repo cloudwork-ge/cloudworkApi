@@ -64,5 +64,11 @@ namespace cloudworkApi.Controllers
             var chats = provider.GetRecentChats(authUser.ID);
             return chats;
         }
+        [HttpPost]
+        [Authorization]
+        public void MarkAsRead(Message message)
+        {
+            provider.MarkAsRead(authUser.ID, message.chatID, message.ID);
+        }
     }
 }

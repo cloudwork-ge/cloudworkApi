@@ -32,10 +32,16 @@ namespace cloudworkApi.Controllers
 {
     public class UsersController : MainController
     {
+        private PKG_USERS provider;
+        public UsersController()
+        {
+            provider = new PKG_USERS();
+        }
         [HttpPost]
         //JsonElement
         public JsonDocument Authenticate([FromBody] LoginCredentials user)
         {
+            if (user.email == null || user.password == null) throwError("შეიყვანეთ მონაცემები");
             var method = new PKG_USERS();
             //AuthUser authUser = null;
             try
@@ -107,7 +113,20 @@ namespace cloudworkApi.Controllers
 
             return Success(output);
         }
+        [HttpPost]
+        [Authorization]
+        public JsonDocument GetUnreadChats()
+        {
+            var dict = new Dictionary<string, object>();
+            dict.Add("unreadChats", provider.getUnreadChatIDs(authUser.ID));
 
+            object output = new
+            {
+                unreadChats = dict
+            };
+
+            return Success(dict);
+        }
         [HttpPost]
         //[Authorization]
         public JsonDocument grdAllUsersExample([FromBody] Grid grid)

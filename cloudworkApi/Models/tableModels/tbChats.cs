@@ -34,5 +34,6 @@ namespace cloudworkApi.Models.tableModels
                 }
             }
         }
+        public DateTime? lastMessageRead;
     }
 }
