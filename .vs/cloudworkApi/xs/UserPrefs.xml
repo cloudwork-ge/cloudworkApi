@@ -1,23 +1,24 @@
 ﻿<Properties StartupConfiguration="{EC2D071E-2CE7-4D81-A033-B0EE91762D4F}|Custom">
-  <MonoDevelop.Ide.Workbench ActiveDocument="cloudworkApi/StoredProcedures/PKG_PROJECT.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="cloudworkApi/Models/UserCredentials.cs">
     <Files>
       <File FileName="cloudworkApi/Models/dsModels/Message.cs" Line="12" Column="34" IsPinned="True" />
-      <File FileName="cloudworkApi/Controllers/MessagesController.cs" Line="72" Column="1" />
+      <File FileName="cloudworkApi/Controllers/MessagesController.cs" />
       <File FileName="cloudworkApi/Models/dsModels/Chat.cs" />
-      <File FileName="cloudworkApi/Models/dsModels/Project.cs" />
+      <File FileName="cloudworkApi/Models/dsModels/Project.cs" Line="1" Column="1" />
       <File FileName="cloudworkApi/Common/ResponseBuilder.cs" />
       <File FileName="cloudworkApi/Models/tableModels/tbMessages.cs" />
       <File FileName="cloudworkApi/Models/tableModels/tbProjects.cs" />
       <File FileName="cloudworkApi/Models/tableModels/tbChats.cs" />
-      <File FileName="cloudworkApi/Models/dsModels/dsUserProfile.cs" />
+      <File FileName="cloudworkApi/Models/dsModels/dsUserProfile.cs" Line="1" Column="1" />
       <File FileName="cloudworkApi/Models/dsModels/dsProjectCategories.cs" />
       <File FileName="cloudworkApi/StoredProcedures/PKG_USERS.cs" />
-      <File FileName="cloudworkApi/Controllers/UsersController.cs" Line="50" Column="14" />
+      <File FileName="cloudworkApi/Controllers/UsersController.cs" Line="42" Column="62" />
       <File FileName="cloudworkApi/StoredProcedures/PKG_MESSAGES.cs" />
-      <File FileName="cloudworkApi/Models/UserCredentials.cs" Line="29" Column="10" />
-      <File FileName="cloudworkApi/Controllers/ProfileController.cs" Line="1" Column="1" />
-      <File FileName="cloudworkApi/Controllers/ProjectController.cs" Line="139" Column="29" />
-      <File FileName="cloudworkApi/StoredProcedures/PKG_PROJECT.cs" Line="62" Column="14" />
+      <File FileName="cloudworkApi/Models/UserCredentials.cs" Line="9" Column="18" />
+      <File FileName="cloudworkApi/Controllers/ProfileController.cs" />
+      <File FileName="cloudworkApi/Controllers/ProjectController.cs" />
+      <File FileName="cloudworkApi/StoredProcedures/PKG_PROJECT.cs" Line="132" Column="68" />
+      <File FileName="cloudworkApi/Models/dsModels/dsUsersExample.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -31,12 +32,11 @@
               <Node name="Models" expanded="True">
                 <Node name="dsModels" expanded="True" />
                 <Node name="tableModels" expanded="True" />
+                <Node name="UserCredentials.cs" selected="True" />
               </Node>
               <Node name="Services" expanded="True" />
               <Node name="SqlDataBaseEntity" expanded="True" />
-              <Node name="StoredProcedures" expanded="True">
-                <Node name="PKG_PROJECT.cs" selected="True" />
-              </Node>
+              <Node name="StoredProcedures" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -56,8 +56,8 @@
       <Breakpoint file="/Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/StoredProcedures/PKG_PROFILE.cs" relfile="cloudworkApi/StoredProcedures/PKG_PROFILE.cs" line="34" column="1" />
       <Breakpoint file="/Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/Controllers/ProjectController.cs" relfile="cloudworkApi/Controllers/ProjectController.cs" line="43" column="1" />
       <Breakpoint file="/Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/Controllers/ProjectController.cs" relfile="cloudworkApi/Controllers/ProjectController.cs" line="109" column="1" />
-      <Breakpoint file="/Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/StoredProcedures/PKG_PROJECT.cs" relfile="cloudworkApi/StoredProcedures/PKG_PROJECT.cs" line="98" column="1" />
-      <Breakpoint file="/Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/StoredProcedures/PKG_PROJECT.cs" relfile="cloudworkApi/StoredProcedures/PKG_PROJECT.cs" line="124" column="1" />
+      <Breakpoint file="/Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/StoredProcedures/PKG_PROJECT.cs" relfile="cloudworkApi/StoredProcedures/PKG_PROJECT.cs" line="103" column="1" />
+      <Breakpoint file="/Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/StoredProcedures/PKG_PROJECT.cs" relfile="cloudworkApi/StoredProcedures/PKG_PROJECT.cs" line="134" column="1" />
       <Breakpoint file="/Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/Services/ChatService.cs" relfile="cloudworkApi/Services/ChatService.cs" line="15" column="1" />
       <Breakpoint file="/Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/Services/ChatService.cs" relfile="cloudworkApi/Services/ChatService.cs" line="18" column="1" />
       <Breakpoint file="/Users/gigi/Documents/GitHub/cloudworkApi/cloudworkApi/Controllers/MessagesController.cs" relfile="cloudworkApi/Controllers/MessagesController.cs" line="47" column="1" />
